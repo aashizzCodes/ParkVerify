@@ -9,8 +9,14 @@ class CheckLocation:
 
     def __init__(self) -> None:
         
-        self.allocated_location_list = {}
+        self.defined_location_list = {}
 
 
-    def is_vechile_in_no_parking(self , location ) -> Any:
-            pass    
+    def is_vechile_in_no_parking(self , location ) -> dict:
+        
+        # loop through the self.defined_location_list return True if illegal_parking else False
+        if location in  self.defined_location_list:
+            return { " illegal_parking_status " : True}
+        
+        else:
+            return { " illegal_parking_status " : False}
