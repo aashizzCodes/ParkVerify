@@ -28,4 +28,3 @@ class vehicle_info:
         for result in results:
             for box in result.boxes:
                 return { 'vechicle_Type' : result.names[int(box.cls)] }
-        
