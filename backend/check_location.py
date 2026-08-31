@@ -13,4 +13,4 @@ class CheckLocation:
 
 
     def is_vechile_in_no_parking(self , location ) -> Any:
-        
+            pass    
