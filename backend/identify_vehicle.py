@@ -12,7 +12,7 @@ from ultralytics import YOLO
 from typing import Any
 
 
-class vehicle_info:
+class VehicleInfo:
     # inital function
     def __init__(self) -> None:
         # model path
@@ -28,3 +28,7 @@ class vehicle_info:
         for result in results:
             for box in result.boxes:
                 return { 'vechicle_Type' : result.names[int(box.cls)] }
+            
+    # fucntion for getting the vechile number if exits
+    def get_vechile_license_plate_number(self,image_path):
+        pass
