@@ -12,7 +12,7 @@ class CheckLocation:
         self.defined_location_list = {}
 
 
-    def is_vechile_in_no_parking(self , location ) -> dict:
+    def get_parking_status(self , location ) -> dict:
         
         # loop through the self.defined_location_list return True if illegal_parking else False
         if location in  self.defined_location_list:
