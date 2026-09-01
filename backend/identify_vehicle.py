@@ -24,10 +24,21 @@ class VehicleInfo:
         # this returns results of the prediction 
         results = self.Model(image_path)
 
-        # loop through the 
+        # empty array for identified vechiles
+        vehicles = []
+
+        # loop through the results
         for result in results:
             for box in result.boxes:
-                return { 'vechicle_Type' : result.names[int(box.cls)] }
+
+                # this variable stores the vechile type
+                vehcile_type = result.names[int(box.cls[0])]
+
+                vehicles.append({
+                    'vehcile_type' : vehcile_type ,
+                    'confidence' : float(box.conf[0]) , 
+                    'coordinates' : box.xyxy[0].int().tolist()
+                })
             
     # fucntion for getting the vechile number if exits
     def get_vechile_license_plate_number(self,image_path):
