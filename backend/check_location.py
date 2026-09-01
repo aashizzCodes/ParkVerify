@@ -9,7 +9,7 @@ class CheckLocation:
 
     def __init__(self) -> None:
         
-        self.defined_location_list = {}
+        self.defined_location_list = {} 
 
 
     def get_parking_status(self , location ) -> dict:
