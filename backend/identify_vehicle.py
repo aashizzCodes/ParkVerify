@@ -52,14 +52,5 @@ class VehicleInfo:
     # fucntion for getting the vechile number if exits
     def get_vechile_license_plate_number(self,image_path):
         
-        # get image and check if the user plate exits return the values if True
-        pass
-
-# ------------------------------------------------------------------------------
-
-    # function to get the number plate data 
-    def get_plate_data(self , cropped_img_path) -> Any:
-
-        pass
-
+        
 # ------------------------------------------------------------------------------
