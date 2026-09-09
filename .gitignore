@@ -2,3 +2,5 @@
 /venv
 test.ipynb
 .cache/
+new.js
+__pycache__
