@@ -32,6 +32,9 @@ class VehicleInfo:
         # get raw data and store it
         results = self._get_raw_vehicle_data(image)
 
+        # process the image using cv2
+        image = cv2.imread(image)
+
         # crop the image into the detected coordinates
         for vehicle in results:
             # crop the image using the coordinates
@@ -39,7 +42,7 @@ class VehicleInfo:
 
             # call the license plate function to get the license plate data
             license_plate_data = self._get_license_plate_data(cropped_image)
-            
+
             # add the license plate data to the vehicle data 
             vehicle.update(license_plate_data)
         
@@ -80,10 +83,9 @@ class VehicleInfo:
 
         # set the coordinates here
         x1, y1, x2, y2 = coordinates
-        # process the image
-        processed_image = cv2.imread(image)
+
         # crop the image using the cv2
-        cropped_image = processed_image[y1:y2, x1:x2]
+        cropped_image = image[y1:y2, x1:x2]
         # return the image  
         return cropped_image
 
